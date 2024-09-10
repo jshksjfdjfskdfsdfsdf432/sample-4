@@ -1,0 +1,940 @@
+/* Loader css start */
+
+.loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #fff;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}
+
+.loader {
+    display: inline-grid;
+    padding: 5px;
+    background: #fff;
+    filter: blur(4px) contrast(12);
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    grid-area: 1/1;
+    height: 40px;
+    aspect-ratio: 3;
+    --c: #0000 64%, #000 66% 98%, #0000 101%;
+    background:
+        radial-gradient(35% 146% at 50% 159%, var(--c)) 0 0,
+        radial-gradient(35% 146% at 50% -59%, var(--c)) 100% 100%;
+    background-size: calc(200%/3) 50%;
+    background-repeat: repeat-x;
+    clip-path: inset(0 100% 0 0);
+    animation: l16 1.5s infinite linear;
+}
+
+.loader:after {
+    scale: -1 1;
+    animation-delay: -.75s;
+}
+
+@keyframes l16 {
+    50% {
+        clip-path: inset(0)
+    }
+
+    to {
+        clip-path: inset(0 0 0 100%)
+    }
+}
+
+/* Loader css start */
+
+:root {
+    --bs-primary-rgb: 216, 138, 150;
+}
+
+@font-face {
+    font-family: 'CabinetGrotesk-Variable';
+    src: url('../fonts/CabinetGrotesk-Variable.woff2') format('woff2'),
+        url('../fonts/CabinetGrotesk-Variable.woff') format('woff'),
+        url('../fonts/CabinetGrotesk-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+    font-family: 'CabinetGrotesk-Variable';
+    background-color: #fff;
+    color: #000;
+}
+
+/* Default css start  */
+
+.text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(216, 138, 150, .3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D88A96;
+}
+
+
+.scroll-to-top {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    background-color: #D88A96;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.bg-props {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+input,
+select,
+button,
+textarea {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-22 {
+    font-size: 18px;
+}
+
+.p-30 {
+    padding: 10px;
+}
+
+.gap {
+    gap: 10px;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.inner-space-sm,
+.inner-space {
+    padding: 50px 0;
+}
+
+.fw-black {
+    font-weight: 900;
+}
+
+/* Default css end  */
+
+/* Custom css start  */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.list-disc {
+    list-style-type: disc;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.shadow-b-2 {
+    box-shadow: 0 2px 0 0 #000;
+}
+
+.content-wrapper {
+    max-width: 1736px;
+    margin: 0 auto;
+}
+
+.appearance-none {
+    appearance: none;
+}
+
+.offcanvas {
+    --bs-offcanvas-width: 250px;
+}
+
+.btn-shadow {
+    filter: drop-shadow(0 10px 14.5px rgba(0, 0, 0, .25));
+    transition: filter .3s;
+    width: fit-content;
+}
+
+.btn-shadow:hover {
+    filter: none;
+}
+
+p.fs-5,
+.fs-5,
+.fs-18 {
+    font-size: 14px !important;
+}
+
+.title h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.title h2 {
+    font-size: 24px;
+    font-weight: 800;
+    padding: 8px 0;
+}
+
+.title p {
+    font-size: 18px;
+}
+
+header {
+    padding: 16px 0;
+}
+
+.header-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 12px 0;
+    border-bottom: 4px solid #D88A96;
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, .50);
+}
+
+.header-sticky .logo {
+    transform: none;
+    max-width: 180px;
+}
+
+.hero-wrapper {
+    background-color: #ffd1da;
+}
+
+.coin-selector .coin {
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+
+#myTab button {
+    border: 1px solid transparent;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+#myTab button.active {
+    border-color: #1A9F0B;
+    background-color: rgba(26, 159, 11);
+}
+
+#myTab button.active::after {
+    content: '';
+    background-image: url(../images/green-tick.svg);
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-size: cover;
+    top: -5px;
+    right: -5px;
+}
+
+.about-card {
+    background-image: url(../images/about-card-bg.png);
+    padding: 28px 44px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.about .about-card img {
+    margin-bottom: 20px;
+}
+
+.about-content-wrapper {
+    padding: 50px 0;
+}
+
+.contract-left .box {
+    width: calc(50% - 12px);
+}
+
+.stake {
+    background-image: url(../images/stack-bg.png);
+}
+
+.roadmap {
+    background-image: url(../images/roadmap-bg.png);
+}
+
+.roadmap-card {
+    background-image: url(../images/phase-bg.png);
+    padding: 46px 10px;
+}
+
+.btn {
+    clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+    background-color: #fff !important;
+    text-transform: uppercase;
+}
+
+.btn-wrapper {
+    filter: url('#goo');
+    overflow: hidden;
+    z-index: 1;
+}
+
+.contract {
+    background-color: #ffd1da;
+    padding: 100px 0;
+}
+
+.hero {
+    padding: 40px 0;
+}
+
+.stake .btn-wrapper a,
+.hero .btn-wrapper a {
+    padding: 10px 36px;
+}
+
+.hero .buy-dogemob {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 12px;
+    border: 5px solid #D88A96;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hero .buy-dogemob h2 {
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.hero .buy-dogemob .countdown {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.hero .buy-dogemob .countdown .box {
+    background-color: #fff;
+    border: 1px solid #D88A96;
+    border-radius: 8px;
+    box-shadow: 0 4px 0 0 #D88A96;
+}
+
+.hero .buy-dogemob .countdown h3 {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.hero .buy-dogemob .countdown h4 {
+    font-size: 15px;
+    color: #696969;
+    font-weight: 500;
+}
+
+.hero .buy-dogemob .count {
+    background-color: #F6F6F6;
+    border: 1px solid rgba(105, 105, 105, .3);
+    border-radius: 999px;
+    font-weight: bold;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .buy-dogemob .count button {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+.hero .buy-dogemob .divider {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(98, 98, 98, 1) 50%, rgba(0, 0, 0, 0) 100%);
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.hero .buy-dogemob input {
+    font-weight: 500;
+    width: 100%;
+    background-color: #F6F6F6;
+    border: 1px solid rgba(105, 105, 105, .3);
+    padding: 8px;
+    padding-right: 40px !important;
+    border-radius: 999px;
+}
+
+.tokenomics-list {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1
+}
+
+.tokenomics-list :nth-child(1) {
+    color: #663EAC;
+}
+
+.tokenomics-list :nth-child(2) {
+    color: #E74023;
+}
+
+.tokenomics-list :nth-child(3) {
+    color: #DE9C0e;
+}
+
+.clientSwiper img {
+    filter: grayscale(100%);
+}
+
+#faq .accordion-item {
+    padding: 15px;
+}
+
+#faq .accordion-body {
+    padding: 12px 0 0;
+}
+
+#faq .accordion-body p {
+    padding: 16px 0 0;
+}
+
+.footer-links a {
+    padding: 5px;
+}
+
+.social-links {
+    gap: 8px;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: grid;
+    place-content: center;
+    border: 1px solid #000;
+}
+
+.accordion {
+    --bs-accordion-btn-icon: url(../images/down-solid.svg);
+    --bs-accordion-btn-active-icon: url(../images/down-solid.svg);
+}
+
+.accordion-button::after {
+    background-position: center;
+    background-size: unset;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.offcanvas-btn {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+}
+
+header .logo img {
+    max-width: 180px;
+}
+
+.footer-logo {
+    max-width: 150px;
+}
+
+.sol-content .qr {
+    width: 128px;
+}
+
+.sol-content .content {
+    width: 100%;
+}
+
+.connect-wallet-modal .wallet-icon {
+    max-width: 40px;
+    max-height: 40px;
+    margin: 0 auto;
+}
+
+.connect-wallet-modal .box {
+    width: calc(50% - 4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile {
+    background-image: url(../images/profile-bg.png);
+}
+
+.profile .gradient {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .2) 41%, rgba(255, 255, 255, .5));
+}
+
+.profile-tab-btns button.active {
+    background-color: #D88A96;
+    color: #fff;
+}
+
+.socials {
+    width: 45px;
+    height: 45px;
+}
+
+.min-w-max {
+    min-width: max-content;
+}
+
+.socials-link a {
+    border: none;
+}
+
+.profile .overflow-x-auto::-webkit-scrollbar {
+    height: 2px;
+}
+
+.profile .overflow-x-auto {
+    padding-bottom: 5px;
+}
+
+.animate-spin {
+    animation: spin 4s linear infinite
+}
+path.animate-spin {
+    transform-origin: 64px 64px;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Custom css end  */
+
+/* Media query start  */
+
+@media (min-width: 576px) {
+    .connect-wallet-modal .box {
+        width: calc(33.33% - 6px);
+    }
+
+    .sol-content .content {
+        width: calc(100% - 144px);
+    }
+
+    p.fs-5,
+    .fs-5,
+    .fs-18 {
+        font-size: 16px !important;
+    }
+
+    .hero .buy-dogemob .countdown {
+        background-color: #F6F6F6;
+        padding: 20px;
+        border-radius: 24px;
+        gap: 10px;
+    }
+
+    .hero .buy-dogemob .countdown h3 {
+        font-size: 30px;
+    }
+
+    .hero .buy-dogemob {
+        padding: 24px 30px;
+        gap: 24px;
+    }
+
+    .hero .buy-dogemob h2 {
+        font-size: 40px;
+    }
+
+    .hero .buy-dogemob input {
+        padding: 13px;
+    }
+
+    .hero .buy-dogemob .countdown .box {
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .socials-link a {
+        border: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .arcade-content {
+        position: absolute;
+        right: 35px;
+        bottom: 20px;
+    }
+
+    .arcade-content p {
+        max-width: 237px;
+        border-radius: 20px;
+        background-color: #fff;
+        font-size: 18px;
+        padding: 16px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .about-card {
+        width: calc(50% - 5px);
+    }
+
+    .hero .buy-dogemob .countdown .box {
+        padding: 15px 0;
+    }
+
+    .roadmap-card {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-logo {
+        max-width: 250px;
+    }
+
+    .hero {
+        padding: 112px 0;
+    }
+
+    .hero .buy-dogemob .countdown .box {
+        min-width: 70px;
+        padding: 10px 0;
+    }
+
+    .social-links {
+        gap: 16px;
+    }
+
+    .footer-links a {
+        padding: 24px;
+    }
+
+    .tokenomics-list {
+        font-size: 24px;
+        max-width: fit-content;
+    }
+
+    .tokenomics-list li {
+        padding: 12px;
+    }
+
+    .title h3 {
+        font-size: 24px;
+    }
+
+    .title h2 {
+        font-size: 36px;
+        padding-top: 24px;
+    }
+
+    .title p {
+        font-size: 20px;
+    }
+
+    p.fs-5,
+    .fs-5,
+    .fs-18 {
+        font-size: 18px !important;
+    }
+
+    .gap {
+        gap: 20px;
+    }
+
+    .inner-space-sm,
+    .inner-space {
+        padding: 90px 0;
+    }
+
+    .fs-18 {
+        font-size: 18px;
+    }
+
+    .p-30 {
+        padding: 20px;
+    }
+
+    .fs-22 {
+        font-size: 20px;
+    }
+
+    .about-card {
+        width: calc(25% - 15px);
+        padding: 10px;
+    }
+
+    .about .about-card img {
+        margin: -112px 0 16px;
+    }
+
+    .tokenomics .title {
+        position: absolute;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .profile .overflow-x-auto {
+        padding-bottom: 0;
+    }
+
+    .footer-logo {
+        max-width: unset;
+    }
+
+    .header-sticky {
+        padding: 20px 0;
+    }
+
+    .roadmap-card {
+        width: calc(25% - 22.5px);
+    }
+
+    .hero .buy-dogemob {
+        min-width: 560px;
+        max-width: 560px;
+    }
+
+    .arcade {
+        background-image: url(../images/arcade-bg.png);
+        padding-top: 75px;
+        padding-bottom: 150px;
+    }
+
+    .tokenomics-list li {
+        padding: 17px;
+    }
+
+    header .logo img {
+        max-width: unset;
+    }
+
+    .header-sticky .logo img {
+        max-width: 220px;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    .contract-left .box {
+        width: calc(50% - 15px);
+    }
+
+    .about-card {
+        width: calc(25% - 22.5px);
+        padding: 28px 44px;
+    }
+
+    header .logo {
+        transform: translateY(-30px);
+    }
+
+    .title h3 {
+        font-size: 34px;
+    }
+
+    .title h2 {
+        font-size: 64px;
+    }
+
+    .title p {
+        font-size: 24px;
+    }
+
+    p.fs-5,
+    .fs-5 {
+        font-size: 20px !important;
+    }
+
+    .fs-22 {
+        font-size: 22px;
+    }
+
+    .inner-gap {
+        gap: 30px;
+    }
+
+    .inner-space-sm {
+        padding: 100px 0;
+    }
+
+    .inner-space {
+        padding: 120px 0;
+    }
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1458px;
+    }
+
+    .p-30 {
+        padding: 30px;
+    }
+
+    .gap {
+        gap: 30px;
+    }
+
+    .hero-wrapper {
+        margin-top: 65px;
+        background-image: url(../images/hero-bg.png);
+        background-color: transparent;
+    }
+
+    .arcade-content {
+        top: 125px;
+        left: 125px;
+        right: unset;
+        bottom: unset;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .tokenomics-list {
+        font-size: 32px;
+    }
+
+
+    .tokenomics-list li {
+        padding: 20px;
+    }
+}
+
+
+@media (min-width: 1600px) {
+    .contract {
+        padding: 90px 88px 205px;
+        background-color: transparent;
+        background-image: url(../images/contract-bg.png);
+    }
+
+    .tokenomics-list li {
+        padding: 20px;
+    }
+
+    .footer-links a {
+        padding: 36px;
+    }
+
+    .social-links {
+        gap: 24px;
+    }
+
+    .justify-content-3xl-between {
+        justify-content: space-between !important;
+    }
+}
+
+@media (min-width: 1800px) {
+    .contract-left {
+        gap: 24px;
+    }
+
+    .about-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .about-content-wrapper {
+        margin-top: -270px;
+    }
+
+    .d-3xl-block {
+        display: block !important;
+    }
+}
+
+
+/* Media query end  */
+
+
+.tab-pane .position-relative:focus-within {
+    border: none;
+}
